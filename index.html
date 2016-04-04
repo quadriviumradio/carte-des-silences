@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>La carte des silences</title>
+    <style type="text/css">
+      html, body { height: 100%; margin: 0; padding: 0; }
+      a:link, a:visited {text-decoration: none; color: black;}
+      #map { height: 100%; }
+      #over_map { position: absolute; background-color: transparent; bottom: 10%; left: 10%; right: 40%; background: white; padding: 25px ; border-radius: 25px ;    }
+
+
+    </style>
+  <script src="./lieux.js"></script>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35163707-6', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="over_map">
+    La Carte des Silences retrace un parcours r&eacute;cent &agrave; travers l'Alaska, par le prisme des silences qui habitent profond&eacute;ment ces terres du bout monde. Parfois les silences existent parce qu'il y a des mouvements, aussi petits et lointains soient&shy;-ils. Aussi, vous profiterez mieux de l'exp&eacute;rience avec un casque.<br/><br/>
+    <i class="fa fa-refresh"></i>  <a href="index.html" onclick="clean()">Initialiser les lieux</a>&nbsp; &nbsp; <i class="fa fa-times"></i>  <a href="#" onclick="ferme()">Carte seule</a>
+    </div></div>
+	
+    <script type="text/javascript">
+
+  
+  function clean(){localStorage.clear();};
+  
+  imageObj = new Image();
+    images = new Array();
+  var i = 0 ;  
+  
+  for (var prop in lieux){ 
+    i++
+  // On affiche les lieux sur la page :
+  // var node = document.createElement("LI");                
+ //    var textnode = document.createTextNode(lieux[prop][0].titre);
+ //    node.appendChild(textnode); 
+ //    var tt = localStorage.getItem(lieux[prop][0].lien);
+  // if (tt != 1) {document.getElementById("listepv").appendChild(node);}
+ //    else {document.getElementById("listev").appendChild(node);}
+  
+  //document.getElementById("liste").innerHTML = lieux[prop][0].titre;
+  // on précharge les images
+  imageObj.src = images[i];
+      var idimg = "photocache" + i
+      var ht = '<img src="#" id="photocache' + i + '"></img>'
+    console.log(ht);
+  // on remplit le tableau images avec les urls
+  images[i] = './img/'+ lieux[prop][0].media + '.jpg'
+  console.log(images[i]); 
+  // on précharge les images
+   
+
+};
+// document.getElementById("photocache15").onload = function(){alert("tata")};
+console.log(images[14]);
+
+
+function ferme(){document.getElementById('over_map').style.display = "none";}
+
+imageObj = new Image();
+images = new Array();
+
+	
+var map;
+var i = 0;
+
+function initMap() {
+
+  var customMapType = new google.maps.StyledMapType([
+      {
+        stylers: [
+          {hue: '#1a474c'},
+          {visibility: 'simplified'},
+          {gamma: 0.5},
+          {weight: 0.5}
+        ]
+      },
+      {
+        elementType: 'labels',
+        stylers: [{visibility: 'off'}]
+      },
+	  	  {
+        featureType: 'landscape.natural',
+        stylers: [{color: '#0d2326'}]
+      },
+     	  	  {
+        featureType: 'landscape.man_made',
+        stylers: [{color: '#0d2326'}]
+      },
+                  {
+        featureType: 'landscape.natural.terrain',
+        stylers: [{ visibility: 'off'}]
+      },	  
+  {
+    featureType: 'poi',
+    stylers: [{ visibility: 'off'}]
+  },
+	  
+	  
+	  	  	  {
+        featureType: 'road',
+        stylers: [{color: '#1a474c'}]
+      },
+	  	  	  {
+        featureType: 'transit',
+        stylers: [{color: '#1a474c'}]
+      },	  
+	  
+	  
+      {
+        featureType: 'water',
+        stylers: [{color: '#0A191A'}]
+      }
+
+	  
+	  
+    ], {
+      name: 'Custom Style'
+  });
+    var customMapTypeId = 'custom_style';
+
+    
+  // On prépare la carte générale, centrée sur la région définie
+  
+  var region = {lat: 63.711049, lng: -149.195493};
+  
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: region
+  });
+
+  // On définit l'image du marqueur
+  
+    var imagevis = './img/pin-blanc.png';
+    var imagepasvis = './img/pin-jaune.png';
+
+  // Boucle pour lire le tableau et créer les marqueurs
+
+  
+	for (var prop in lieux){
+	i++
+	// On définit une variable pour les lieux visités ou non 
+    var vis = localStorage.getItem(lieux[prop][0].lien);
+  
+    if (vis != 1) 
+    	{    
+    var marker = new google.maps.Marker({
+    position: lieux[prop][0].pos,
+	map: map,
+	animation: google.maps.Animation.DROP,
+    icon: imagepasvis
+    });
+}
+    else {
+    var marker = new google.maps.Marker({
+    position: lieux[prop][0].pos,
+	map: map,
+	animation: google.maps.Animation.DROP,
+    icon: imagevis
+    });	
+    }
+
+
+	
+	// on remplit le tableau images avec les urls
+    images[i] = './img/'+ lieux[prop][0].media + '.jpg'
+	console.log(images[i]);
+	
+	// on précharge les images
+	imageObj.src=images[i];
+	
+	// On crée le contenu du pop-up
+	
+	var contenuPop = '<div id="popup"><a href="lieu.html?lieu='+ lieux[prop][0].lien +'" target="_parent">'+ lieux[prop][0].titre + '</a></div>'
+	
+	// On appelle la fonction pour lier le contenu et le marqueur
+	
+    attacheMessage(marker, contenuPop);
+	}
+
+	// On définit la fonction qui crée le pop-up avec le bon contenu
+		function attacheMessage(marker, message) {
+			var infowindow = new google.maps.InfoWindow({
+			content: message
+		}
+		);
+
+  marker.addListener('click', function() {
+    infowindow.open(marker.get('map'), marker);
+  });
+
+}
+	   
+  map.mapTypes.set(customMapTypeId, customMapType);
+  map.setMapTypeId(customMapTypeId);
+
+}
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxVvPX7VLXF-8ddRRDVkjugaGRltpFGQM&callback=initMap">
+ </script>
+  </body>
+</html>
