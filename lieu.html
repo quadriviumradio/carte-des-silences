@@ -55,7 +55,6 @@ $(theItem).css("margin-top",winHeight / 2 - $(theItem).height() / 2);
 <script>
 
 // On récupère le paramètre posté depuis la carte, on cherche le =, on coupe après. On enlève le " à la fin, on le stocke dans la variable lieuf.
- 
 var url = window.location.href;
 var pospoint = url.search("=");
 var lieu = url.slice(pospoint+1);
@@ -81,8 +80,6 @@ localStorage.setItem(lieuf, 1);
 // On charge la photo et on joue le son avec howler
 silence.fadeIn(1,3000);
 
-
-  
   function fado(){silence.fadeOut(0, 1500, close);} 
   function close(){location.href="index.html"};
 </script>
@@ -106,7 +103,6 @@ jQuery(document).ready(function()
  <div id="menu">
    
 <div id="menu">
->>>>>>> Stashed changes
 	<i class="fa fa-map-o"></i> <a href="#" id="retour">Carte</a><br/>
 	<i class="fa fa-book"></i> <a href="#" id="action">Texte</a>
 	<p id="texte"><script>
