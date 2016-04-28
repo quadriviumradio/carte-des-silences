@@ -6,18 +6,37 @@
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script> 
 <script src="lieux.js"></script>
 <style type="text/css">
-html { 
-  margin:0;
-  padding:0;
-  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-  background-size: cover; /* version standardisée */}
-        #menu { position: absolute; background-color: transparent; bottom: 10%; left: 5%; background: white; padding: 15px ; border-radius: 15px}
-        a:link, a:visited {text-decoration: none; color: black;}
+body{margin:0px; padding:0px; background:#000;}
+#conteneur-image{position:fixed; z-index:-1; overflow:hidden;}
+#menu { position: absolute; background-color: transparent; bottom: 10%; left: 5%; background: white; padding: 15px ; border-radius: 15px}
+a:link, a:visited {text-decoration: none; color: black;}
+#texte{height:120px; width:400px; background:#fff; ; text-align:justify;margin-left: 20px; padding:20px}
 
 </style>
 
 
 <script>
+
+// Gestion du plein écran avec jquery
+function FullScreenBackground(theItem){
+var winWidth=$(window).width();
+var winHeight=$(window).height();
+var imageWidth=$(theItem).width();
+var imageHeight=$(theItem).height();
+var picHeight = imageHeight / imageWidth;
+var picWidth = imageWidth / imageHeight;
+if ((winHeight / winWidth) < picHeight) {
+$(theItem).css("width",winWidth);
+$(theItem).css("height",picHeight*winWidth);
+} else {
+$(theItem).css("height",winHeight);
+$(theItem).css("width",picWidth*winHeight);
+};
+$(theItem).css("margin-left",winWidth / 2 - $(theItem).width() / 2);
+$(theItem).css("margin-top",winHeight / 2 - $(theItem).height() / 2);
+}
+
+// Tags google analytics
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -44,14 +63,14 @@ var photo = './img/' + lieux[lieuf][0].media + '.jpg';
 // On affiche le titre du lieu pour le HTML et on cherche l'url du mp3 que l'on charge dans la variable qui contrôle howler
 document.write(title);
 
-var stylage = 'url('+ photo +')no-repeat center fixed';
-document.body.style.background = stylage;
-
 localStorage.setItem(lieuf, 1);
  var silence = new Howl({
   urls: ['./sons/MP3/' + lieux[lieuf][0].media + '.mp3','./sons/MP4/' + lieux[lieuf][0].media + '.mp4','./sons/OGG/' + lieux[lieuf][0].media + '.ogg'],
   buffer: true
 });
+
+
+
 </script>
 
 <script>
@@ -78,19 +97,26 @@ jQuery(document).ready(function()
 });
 /* ]]> */ 
 </script>
-<style type="text/css">
-#texte{height:120px; width:400px; background:#fff; ; text-align:justify;margin-left: 20px; padding:20px}
-}
-</style>
+
 <div id="menu">
+    <div id="conteneur-image"><img src="#" id="bgimg"></div>
 	<i class="fa fa-map-o"></i> <a href="#" id="retour">Carte</a><br/>
 	<i class="fa fa-book"></i> <a href="#" id="action">Texte</a>
 	<p id="texte"><script>
+	// On appelle l'image et on la met en plein écran avec jquery
+	window.onload = function () {
+    FullScreenBackground('#bgimg');
+    }
+    $(window).resize(function() {
+    FullScreenBackground('#bgimg');
+    });
+	$("#bgimg").attr("src", photo);
+	
 	var textedanigel = lieux[lieuf][0].texte ;
 	document.write(textedanigel);
 	document.getElementById('retour').addEventListener("click", fado);</script></p>
 	
-	</div>
+</div>
 
 </body>
 </html>
