@@ -52,7 +52,7 @@ var lieux = {"portage": [
       "media": "T28",
     "pos": {lat: 65.212594, lng: -147.089364},
     "lien": "forest",
-     "texte": "La Nuit int&eacute;rieure est &eacute;blouissante. Le chemin est dans la lune. Une &eacute;toile dit-vague. A moins que ce soit un ours ! Ou peut-&shy;&ecirc;tre un orignal... Son cri porte le silence sur un Plateau d'argent."
+     "texte": "Le coeur canin au loin. Les vieux rugueux ne s'en plaignent pas. Nul besoin de piquer le temps."
       }],  
     "dog_choir": [ 
       {
