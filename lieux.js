@@ -12,7 +12,7 @@ var lieux = {"portage": [
       "media": "T05",
     "pos": {lat: 62.264764, lng: -146.522107},
     "lien":"louise",
-    "texte":"Las. Sous sa couette &eacute;paisse, endormi. Le Lac Louise assiste enfin &agrave; sa pi&egrave;ce intime. Il r&ecirc;ve d'un Soleil qui fige dans le ciel. La Nuit entre en sc&egrave;ne aussi vite qu'un arbre grimpant &agrave; la cime de la for&ecirc;t. La Nuit vient, mais le Soleil ne se pousse pas. Cet espace est &agrave; l'arr&ecirc;t. Cette lumi&egrave;re est &agrave; l'arr&ecirc;t. D'une main affectueuse, un vent maternel caresse le duvet blanc. Pr&eacute;cieux mouvement."
+    "texte":"Las et endormi, sous sa couette épaisse. Le Lac Louise assiste enfin à sa pièce intime. Il rêve d'un Soleil qui fige dans le ciel. La Nuit entre en scène aussi vite qu'un arbre grimpant à la cime de la forêt. La Nuit vient, mais le Soleil ne se pousse pas. Cette lumière est à l'arrêt… D'une main affectueuse, le vent maternel caresse son duvet blanc. Précieux mouvement."
     }],
        "copper_center": [ 
       {
@@ -28,7 +28,7 @@ var lieux = {"portage": [
       "media": "T20",
     "pos": {lat: 62.260634, lng: -145.353442},
     "lien": "copper_river",
-    "texte":"Les r&ecirc;ves s'&eacute;coulent tendrement... Le Soleil se voit en projecteur de th&eacute;&acirc;tre. Il invente des couleurs et illumine des petites vies insouciantes. La Nuit se baigne dans un lac enti&egrave;rement lisse et blanc. Aucune vague ne lui &eacute;clabousse les yeux, et le fond est invisible. Le Vent enlace un sentier myst&eacute;rieux. Les oiseaux rebondissent et &eacute;coutent la route au loin."
+    "texte":"Les rêves s'écoulent tendrement... Le Soleil se voit en projecteur de théâtre. Il invente des couleurs et illumine des petites vies. La Nuit se baigne dans un lac entièrement lisse et blanc. Aucune vague ne lui éclabousse les yeux, et le fond est invisible. Le Vent enlace un sentier mystérieux. Les oiseaux rebondissent et écoutent la route au loin."
       }],   
        "richardson": [ 
       {
@@ -36,7 +36,7 @@ var lieux = {"portage": [
       "media": "T22",
     "pos": {lat: 62.781095, lng: -145.469012},
     "lien": "richardson",
-    "texte": "Une pelote jaune roule et s'&eacute;tire sur la route. Elle se fragmente pour aller plus loin. Les vieux arbres, curieux, la regarde. Ce qu'ils ne comprennent pas, c'est que la pelote tisse une pi&egrave;ce infinie qui s'appelle Distance, et qu'elle va bient&ocirc;t briser le mur du son."
+    "texte": "Une pelote jaune roule et s'étire sur la route. Elle se fragmente pour aller plus loin. Les vieux arbres, curieux, la regarde. Ce qu'ils ne comprennent pas, c'est que la pelote tisse une scène infinie qui s'intitule Distance, et qu'elle va bientôt briser le mur du son."
       }],  
     "paxson": [ 
       {
@@ -44,7 +44,7 @@ var lieux = {"portage": [
       "media": "T23",
     "pos": {lat: 63.163225, lng: -145.530029},
     "lien": "paxson",
-    "texte": "La Nuit int&eacute;rieure est &eacute;blouissante. Le chemin est dans la lune. Une &eacute;toile dit vague. A moins que ce soit un ours ! Ou peut-&shy;&ecirc;tre un orignal... Son cri porte le silence sur un Plateau d'argent."
+    "texte": "La Nuit intérieure est éblouissante. Le chemin est dans la lune. Une étoile dit-vague. A moins que ce soit un ours ! Ou peut-­être un orignal... Son cri porte le silence sur un Plateau d'argent."
       }],  
     "forest": [ 
       {
@@ -52,7 +52,7 @@ var lieux = {"portage": [
       "media": "T28",
     "pos": {lat: 65.212594, lng: -147.089364},
     "lien": "forest",
-     "texte": "Le coeur canin. Lointain. M&eacute;lancolique. Intangible. Est parti. Les vieux rugueux, et piquants, ne s'en plaignent pas. Pour eux, nul besoin de piquer le temps. Car la tranquillit&eacute; suffit. Quoiqu'ils n'arr&ecirc;tent pas la fougue des petites f&eacute;es qui bondissent inopin&eacute;ment sur leurs bras rigides."
+     "texte": "Le coeur canin est parti. Les vieux rugueux ne s'en plaignent pas. Nul besoin de piquer le temps."
       }],  
     "dog_choir": [ 
       {
@@ -92,7 +92,7 @@ var lieux = {"portage": [
        "media": "T49",
     "pos": {lat: 65.366755, lng: -148.955537},
     "lien": "borealis",
-    "texte":"Apparition farouche sur la sc&egrave;ne nocturne. Danse c&eacute;leste. Vedette furtive et silencieuse.<br />Clou du spectacle. Les fines herbes, jalouses par cette chor&eacute;graphie mystique, s'inclinent tout de m&ecirc;me devant tant de talent. Des visages pi&eacute;g&eacute;s dans la nuit grincent et grimacent avec leurs longs doigts secs. Tout le monde s'y attendait, mais tout le monde est surpris.<br />La grande voile p&acirc;le flotte au vent."
+    "texte":"Un ballet céleste et feutré, qui sort de la nuit. Les fines herbes, bien trop fières de leurs ballerines, s'inclinent devant tant de talent. Des visages, piégés dans les ténèbres, grimacent avec leurs longs doigts secs. Tout le monde attendait et tout le monde espérait, mais tout le monde est surpris. La grande voile pâle flotte au vent."
       }],  
     "park_road": [ 
 {
@@ -100,7 +100,7 @@ var lieux = {"portage": [
        "media": "T53",
     "pos": {lat: 63.716166, lng: -149.019712},
     "lien": "park_road",
-    "texte":"Une baleine blanche roule sa bosse. Le fr&ecirc;le protagoniste, de ses multiples bras pleins de doigts, nargue son adversaire. Pourtant, les tambours m&eacute;lodramatiques agitent les fines herbes d'un frisson inqui&eacute;tant."
+    "texte":"Une baleine blanche roule sa bosse. Le frêle protagoniste, de ses multiples bras pleins de doigts, nargue son adversaire. Mais les tambours mélodramatiques agitent les fines herbes dans une gigue frissonnante."
       }],
     "denali": [ 
 {
@@ -108,7 +108,7 @@ var lieux = {"portage": [
        "media": "T54",
     "pos": {lat: 63.740590, lng: -149.291352},
     "lien": "denali",
-    "texte":"Le Soleil est en r&eacute;gie. Depuis sa place favorite, il inonde maintenant la sc&egrave;ne d'un feu &eacute;clatant. Le jeune premier souffle son texte avec conviction, au sein d'un d&eacute;cor chaotique."
+    "texte":"Derrière sa console d'éclairage, le Soleil inonde maintenant la scène d'un nouveau feu éclatant. Le jeune premier souffle son texte avec conviction, et le décor est chaotique."
       }],
     "savage_river": [ 
   {
@@ -116,6 +116,6 @@ var lieux = {"portage": [
        "media": "T55",
     "pos": {lat: 63.774522, lng: -149.306080},
     "lien":"savage_river",
-    "texte":"Les r&ecirc;ves s'acheminent vers un nouveau spectacle. Le souvenir d'une lumi&egrave;re ensorcelante hante encore les vaguelettes fr&eacute;tillantes."
+    "texte":"Les rêves s'acheminent vers un nouveau théâtre. Le souvenir de la chorégraphie lumineuse ensorcelle encore les vaguelettes qui frétillent sur le dos des saumons indolents."
       }]    
 }
